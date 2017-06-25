@@ -13,7 +13,7 @@ class EnvironmentTest extends TestCase {
                 'environments' => [
                     'env' => 'development',
                     'development' => [
-                        'app.php' => '<?php $a=999',
+                        'app.php' => '<?php return ["a" => 999];',
                     ],
                 ],
             ],
@@ -24,6 +24,11 @@ class EnvironmentTest extends TestCase {
             'env_dir' => 'environments',
             'config_path' => $this->root->url().DS.'config',
         ];
+    }
+    
+    public function tearDown() {
+        $env_key = $this->config['env_key'];
+        Configure::delete($env_key);
     }
     
     public function testSetConfig() {
@@ -66,5 +71,15 @@ class EnvironmentTest extends TestCase {
         Environment::config($config);
         Configure::write($config['env_key'], 'production');
         $this->assertEquals('production', Environment::env());
+    }
+    
+    /**
+     * @depends testSetConfig
+     */
+    public function testLoad($config) {
+        define('CONFIG', $this->root->url(). DS. 'config' . DS);
+        Environment::config($config);
+        Environment::load('app');
+        $this->assertEquals('999', Configure::read('a'));
     }
 }
