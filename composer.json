@@ -1,0 +1,23 @@
+{
+    "name": "guenbakku/Cakeenv",
+    "description": "Environment switch plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "require": {
+        "cakephp/cakephp": "^3.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7|^6.0",
+        "mikey179/vfsStream": "1.6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cakeenv\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cakeenv\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}
