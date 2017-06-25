@@ -57,7 +57,7 @@ config
 
 ### 3/ Switch to environment you want
 
-Open file `config/environemts/env`, set environment name you want in the first line and save it. That's all.
+Open file `config/environments/env`, set environment name you want in the first line and save it. That's all.
 
 Example:
 
