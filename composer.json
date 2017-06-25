@@ -2,6 +2,7 @@
     "name": "guenbakku/cakeenv",
     "description": "Environment switch plugin for CakePHP",
     "type": "cakephp-plugin",
+    "license": "MIT",
     "require": {
         "php": ">=7.0",
         "cakephp/cakephp": "^3.2"
