@@ -15,7 +15,7 @@ class Environment {
         'env_key' => 'env',
         'env_dir' => 'environments',
         'config_path' => ROOT.DS.'config',
-    ]
+    ];
     
     /**
      * Get name of environment.
@@ -52,7 +52,7 @@ class Environment {
             static::$config['env_dir'], 
             static::$config['env_key'],
         ]);
-        $env = trim(fgets(fopen($env_file, 'r')));
+        $env =@ trim(fgets(fopen($env_file, 'r')));
         if (empty($env)) {
             throw new \Exception("File does not exist or it is empty: $env_file");
         }
@@ -63,7 +63,10 @@ class Environment {
      * Set config for plugin
      * Use it when you want to change env's config directory 
      */
-    public static function config($config) {
-        static::config = array_merge(static::config, $config);
+    public static function config($config=null) {
+        if (is_array($config)) {
+            static::$config = array_merge(static::$config, $config);
+        }
+        return static::$config;
     }
 }

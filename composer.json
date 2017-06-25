@@ -3,6 +3,7 @@
     "description": "Environment switch plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
+        "php": ">=7.0",
         "cakephp/cakephp": "^3.2"
     },
     "require-dev": {

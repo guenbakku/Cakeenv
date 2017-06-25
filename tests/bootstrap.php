@@ -23,4 +23,7 @@ unset($findRoot);
 chdir($root);
 require $root . '/vendor/autoload.php';
 
-
+if (!defined('DS')) {
+    define('DS', DIRECTORY_SEPARATOR);
+}
+define('ROOT', $root);
