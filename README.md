@@ -32,7 +32,7 @@ After:
 ~~~ php
 try {
     Configure::config('default', new PhpConfig());
-    Plugin::load('Environments');
+    Plugin::load('Cakeenv');
     Cakeenv\Environment::load('app', 'default', false);
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
