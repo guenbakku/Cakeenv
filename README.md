@@ -32,8 +32,8 @@ After:
 ~~~ php
 try {
     Configure::config('default', new PhpConfig());
-    Plugin::load('Cakeenv');
-    Cakeenv\Environment::load('app', 'default', false);
+    Plugin::load('Guenbakku/Cakeenv', ['bootstrap' => false, 'routes' => false]);
+    Guenbakku\Cakeenv\Environment::load('app', 'default', false);
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
