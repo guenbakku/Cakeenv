@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use org\bovigo\vfs\vfsStream;
 use Cake\Core\Configure;
-use Cakeenv\Environment;
+use Guenbakku\Cakeenv\Environment;
 
 class EnvironmentTest extends TestCase {
         

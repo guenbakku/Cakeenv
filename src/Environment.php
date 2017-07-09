@@ -5,7 +5,7 @@
  * @copyright   NVB
  * @license     http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cakeenv;
+namespace Guenbakku\Cakeenv;
 
 use Cake\Core\Configure;
 
