@@ -66,7 +66,7 @@ Example:
 development
 ~~~ 
 
-## Developement
+## Development
 
 > Note:  
 > Following is the memo for developing this plugin.
