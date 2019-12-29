@@ -41,7 +41,8 @@ try {
 
 ### 2/ Create directory for containing each environment's `app.php`
 
-NOTE: name of each environment directory can be set to anything you want.
+> Note:  
+> Name of each environment directory can be set to anything you want.
 
 ~~~
 config
@@ -64,3 +65,19 @@ Example:
 ~~~
 development
 ~~~ 
+
+## Developement
+
+> Note:  
+> Following is the memo for developing this plugin.
+> End-user can skip this section.
+
+```bash
+# 1. Build docker image for developing (first time only)
+$ docker-compose build  
+
+# 2. Composer installing (first time only)
+$ docker-compose run --rm php composer install
+
+# 3. Execute phpunit
+$ docker-compose run --rm php vendor/bin/phpunit
